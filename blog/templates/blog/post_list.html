@@ -3,19 +3,16 @@
         <title>Ola's blog</title>
     </head>
     <body>
-        <h1>Django Con</h1>
-        <h2>This has been <br /> a great experience!</h2>
-        <h3>I can't wait to return!</h3>
-        <div>
-            <p>Hi <em>there!</em></p>
-            <p>It <strong>works!</strong></p>
-            <a href="https://2017.djangocon.us/">DjangoCon 2017</a>
-            <ul>
-            <h4>Things to learn</h4>
-                <li>Python</li>
-                <li>Django</li>
-                <li>Command Line</li>
-            </ul>
+        <div> 
+            <h1><a href="/">Django Girls Tutorial Blog</a></h1>
         </div>
+        {% for post in posts %}
+        
+            <div>
+                <p>published: {{ post.published_date  }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
